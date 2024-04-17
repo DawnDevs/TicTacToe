@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .win-horizontal-top, .win-horizontal-middle, .win-horizontal-bottom {
+        @apply before:block before:w-full before:h-1 before:bg-red-500 before:absolute before:left-0;
+    }
+
+    .win-horizontal-top .winning { @apply before:top-1/4; }
+    .win-horizontal-middle .winning { @apply before:top-1/2; }
+    .win-horizontal-bottom .winning { @apply before:top-3/4; }
+
+    .win-vertical-left, .win-vertical-center, .win-vertical-right {
+        @apply before:block before:h-full before:w-1 before:bg-red-500 before:absolute before:top-0;
+    }
+
+    .win-vertical-left .winning { @apply before:left-1/4; }
+    .win-vertical-center .winning { @apply before:left-1/2; }
+    .win-vertical-right .winning { @apply before:left-3/4; }
+
+    .win-diagonal-from-left {
+        @apply before:block before:w-full before:h-full before:bg-transparent before:absolute before:top-0 before:left-0;
+        --transform-origin: top left;
+        --rotation-angle: -45deg;
+        @apply before:origin-[var(--transform-origin)] before:rotate-[var(--rotation-angle)] ;
+    }
+    
+    .win-diagonal-from-right {
+        @apply before:block before:w-full before:h-full before:bg-transparent before:absolute before:top-0.5 before:left-[95%];
+        --transform-origin: top right;
+        --rotation-angle: 45deg;
+        @apply before:origin-[var(--transform-origin)] before:rotate-[var(--rotation-angle)];
+    }
+
+    .win-diagonal-from-left, .win-diagonal-from-right {
+        @apply before:bg-red-500 before:w-1 before:h-32;
+    }
+}
