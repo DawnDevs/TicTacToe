@@ -11,7 +11,6 @@ function Square({ value, onClick, isWinning, lineClass }) {
   );
 }
 
-
 function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
