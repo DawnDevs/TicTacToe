@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Tic Tac Toe Game Documentation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1. Introduction
+This documentation outlines the architecture and flow of a Tic Tac Toe game built using React.js for the frontend, IPFS via Pinata for decentralized storage, and Solidity for blockchain integration. The game allows users to play online, tracks game progress locally, and securely stores game data on IPFS and the blockchain.
 
-## Available Scripts
+## 2. Flow Overview
+- **User Interaction**: Users interact with the game through the React.js frontend.
+- **Local Storage**: Game data (such as moves and actions) is temporarily stored in the local storage of the user's browser.
+- **Game Completion**: After a game finishes, the local storage is cleared.
+- **IPFS Storage**: The game data is then securely stored on IPFS via Pinata, generating a unique hash value for the data.
+- **Blockchain Integration**: The hash value is stored on the blockchain using Solidity smart contracts, ensuring immutability and transparency of game records.
 
-In the project directory, you can run:
+## 3. Frontend Flow
+- **User Interaction**: Players interact with the game interface rendered using React.js.
+- **Game Progress Tracking**: React.js tracks all user actions, such as moves and game completion.
+- **Local Storage**: Game data is stored locally in the user's browser using browser storage APIs (e.g., localStorage).
+- **Game Completion Detection**: When a game finishes, the local storage is cleared to prepare for the next game.
 
-### `npm start`
+## 4. Backend Flow
+- **IPFS Storage**: After game completion, the game data is uploaded to IPFS via the Pinata API, ensuring decentralized and secure storage.
+- **Hash Retrieval**: Pinata returns a unique hash value representing the stored game data.
+- **Blockchain Integration**: Using Solidity smart contracts deployed on the blockchain, the hash value is stored permanently, ensuring the integrity and transparency of game records.
+- **Blockchain Transaction**: A transaction is executed to store the hash value on the blockchain, providing a permanent record of the game data.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 5. Game Data Structure
+- The game data stored includes information such as player moves, game outcome, timestamps, and any other relevant metadata.
+- This data is structured in a format suitable for IPFS storage and blockchain transactions.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 6. Security Considerations
+- Data stored on IPFS is encrypted to ensure privacy and security.
+- Smart contracts are audited for security vulnerabilities to prevent unauthorized access or manipulation of game records.
 
-### `npm test`
+## 7. Deployment
+- The frontend is deployed on a web server accessible to users.
+- IPFS nodes and Pinata API are utilized for decentralized storage.
+- Solidity smart contracts are deployed on a compatible blockchain network (e.g., Ethereum).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 8. Conclusion
+This documentation provides a comprehensive overview of the architecture and flow of the Tic Tac Toe game, demonstrating the integration of React.js frontend with IPFS and Solidity smart contracts for decentralized storage and blockchain integration. By following this flow, users can securely play the game online while ensuring the integrity and transparency of game records.
